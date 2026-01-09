@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makoto Jujitsu Academy | Palermo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              makotoYellow: '#FACC15',
+              makotoGold: '#D4AF37',
+              makotoBlack: '#000000',
+              makotoWhite: '#FFFFFF',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              inter: ['Inter', 'sans-serif'],
+              heading: ['Space Grotesk', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Global high-performance rendering */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --hero-main-size: clamp(54px, 14vw, 160px);
+      }
+
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: geometricPrecision;
+        font-smooth: always;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .hero-container-fix {
+        height: 100vh;
+        height: 100dvh;
+        min-height: -webkit-fill-available;
+      }
+
+      .text-image-clip {
+        background-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=2000');
+        background-size: 150%; /* Larger scale than BG for contrast variation */
+        background-position: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        backface-visibility: hidden;
+        transform: translate3d(0,0,0);
+        
+        /* Balanced Filter: Toned down from brightness 1.7 / contrast 1.4 */
+        filter: contrast(1.1) brightness(1.15) drop-shadow(0 0 25px rgba(0,0,0,0.8));
+        
+        letter-spacing: -0.05em;
+        
+        /* Subtle rim light for definition */
+        -webkit-text-stroke: 1px rgba(255,255,255,0.03);
+      }
+
+      .hero-subtitle-accent {
+        font-family: 'Space Grotesk', sans-serif;
+        background: linear-gradient(180deg, #FFFFFF 0%, #D4AF37 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: 0.1em;
+        filter: drop-shadow(0 0 15px rgba(212,175,55,0.15));
+      }
+
+      @media (max-width: 767px) {
+        .text-image-clip {
+          filter: contrast(1.1) brightness(1.2) drop-shadow(0 0 15px rgba(0,0,0,0.9));
+          -webkit-text-stroke: 0.5px rgba(255,255,255,0.1);
+          paint-order: stroke fill;
+        }
+      }
+
+      .shimmer-grid {
+        background-image: linear-gradient(to right, #ffffff05 1px, transparent 1px),
+                          linear-gradient(to bottom, #ffffff05 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+
+      .transform-gpu {
+        transform: translate3d(0,0,0);
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        contain: layout style paint;
+      }
+
+      @media (max-width: 767px) and (orientation: landscape) {
+        .landscape-hide { display: none !important; }
+        .hero-container-fix { height: 100vh; }
+      }
+
+      .gpu-optimized {
+        transform: translateZ(0);
+        perspective: 1000px;
+        backface-visibility: hidden;
+      }
+
+      .backface-hidden {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+
+      .hero-smooth {
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      .particle {
+        position: absolute;
+        background: rgba(212, 175, 55, 0.4);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: particle-float linear infinite;
+      }
+
+      @keyframes particle-float {
+        0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.6; }
+        90% { opacity: 0.6; }
+        100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+      }
+
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #000; }
+      ::-webkit-scrollbar-thumb {
+        background: #222;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.24.12",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
