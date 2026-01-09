@@ -49,11 +49,7 @@ const Dashboard: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
-    if (!adminPassword) {
-      setError('Configurazione mancante');
-      return;
-    }
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'MakotoDario123';
     if (password === adminPassword) {
       setIsAuthenticated(true);
       setError('');
