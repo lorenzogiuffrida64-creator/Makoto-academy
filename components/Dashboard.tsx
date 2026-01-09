@@ -49,8 +49,7 @@ const Dashboard: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'MakotoDario123';
-    if (password === adminPassword) {
+    if (password === 'MakotoDario123') {
       setIsAuthenticated(true);
       setError('');
     } else {
